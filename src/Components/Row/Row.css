@@ -1,0 +1,215 @@
+.row{
+    margin-left:50px;
+    margin-top:20px;
+}
+.row__posters{
+    display:flex;
+    overflow-y: hidden;
+    overflow-x:scroll;
+    padding-top:20px;
+    cursor: pointer;
+}
+
+.row__posters::-webkit-scrollbar {
+    display: none;
+  }
+.row__poster{
+    object-fit: contain;
+    border-radius: 6px;
+    width:100%;
+    max-height: 200px;
+    margin-right: 10px;
+    transition: transform 500ms;
+}
+
+.row__poster:hover{
+    transform: scale(1.06);
+}
+
+.row__posterLarge{
+    max-height: 500px;
+}
+.row__posterLarge:hover{
+    transform: scale(1.06)
+}
+@media(max-width:700px){
+    .row__poster{
+        max-height: 150px;
+    }
+    .row__posterLarge{
+        max-height: 300px;
+    }
+    .row{
+        margin-left:15px;
+    }
+}
+
+.empty__rows{
+    display:grid;
+    grid-template-columns: repeat(6, 320px);
+    grid-column-gap: 40px;
+    width:100%;
+    padding-right:40px;
+    align-items: center;
+    justify-content:space-between;
+   
+}
+.empty__row{
+    border-radius: 6px;
+    height:450px;
+    -webkit-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Safari 4+ */
+    -moz-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Fx 5+ */
+    -o-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Opera 12+ */
+    animation: NAME-YOUR-ANIMATION 1s infinite;  /* IE 10+, Fx 29+ */
+}
+
+
+@keyframes NAME-YOUR-ANIMATION {
+    0%, 10% {
+      background-color: rgb(121, 121, 121);
+    }
+    61%, 100% {
+      background-color: rgb(121, 121, 121, 0.7);
+    }
+  }
+
+
+
+  
+.ReactModal__Body--open {
+    overflow: hidden;
+}
+
+.ReactModal__Content {
+  opacity: 0;
+  transform: translateX(-200%);
+  transition: all 300ms ease-in-out;
+}
+
+.ReactModal__Content--after-open {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.ReactModal__Content--before-close {
+  opacity: 0;
+  transform: translateX(200%);
+}
+.modal-body{
+    position: relative;
+}
+
+.modal-body img{
+    width:100%;
+}
+
+.close__icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    cursor: pointer;
+    padding: 1em;
+    color:white;
+}
+.close__icon svg{
+    width: 25px;
+    height: 25px;
+    background-color: #181818;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    padding: 8px;
+}
+.movie-img{
+    position: relative;
+}
+
+.fadeBottom{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    height:10vh;
+    width:100%;
+    background-image: linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #181818);
+}
+
+.grid-details{
+    display:grid;
+    grid-template-columns: minmax(0,2fr) minmax(0,1fr);
+    padding:10px 30px;
+    column-gap: 2em;
+    padding-bottom:50px;
+}
+
+.details-left h2{
+    padding-bottom: 0.5em;
+    color:#46d369 ;
+}
+.details-left p{
+    font-weight: 400;
+    line-height: 1.5;
+}
+.details-right{
+    justify-self:flex-end;
+    color:#46d369;
+    padding-top:20px;
+}
+.details-right span{    
+    color:#777;
+    font-size:14px ;
+}
+
+.ReactModal__Content::-webkit-scrollbar {
+    display: none;
+  }
+
+.trailer-button{
+    position: absolute;
+    bottom:50px;
+    left:30px;
+}
+.trailer-button button{
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem;
+    position: relative;
+    user-select: none;
+    background-color: white;
+    box-shadow: 2px 2px 10px black;
+}
+.trailer-button button:hover{
+    background-color:rgb(211, 211, 211);
+}
+
+@media(max-width:1200px){
+    .ReactModal__Content{
+        width:90% !important
+      }
+      .grid-details{
+        grid-template-columns: 1fr;
+    }
+    .details-right{
+        justify-self:flex-start;
+    }
+}
+@media(max-width:700px){
+    .trailer-button button{
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+    .trailer-button{
+        bottom:20px;
+        left:10px;
+    }
+    .youtube-video iframe{
+        height:250px;
+    }
+    .ReactModal__Content {
+        left:20px !important;
+
+      }
+}
